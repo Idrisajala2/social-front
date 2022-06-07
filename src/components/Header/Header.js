@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import React from "react";
+import pix1 from "../img/bt.png";
+
 import {
   AiOutlineSearch,
   AiFillHome,
@@ -26,7 +28,7 @@ const Header = () => {
           <Icon1 />
           <Icon2 />
 
-          <Img />
+          <Img src={pix1} alt="" />
         </ProfleIconsHolders>
       </Wrapper>
     </Container>
@@ -41,7 +43,7 @@ export default Header;
 // const Container = styled.div``
 // const Container = styled.div``
 // const Container = styled.div``
-const Img = styled.div`
+const Img = styled.img`
   height: 35px;
   width: 35px;
   border-radius: 50%;

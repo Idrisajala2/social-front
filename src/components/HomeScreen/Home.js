@@ -1,59 +1,62 @@
 import React from "react";
 import styled from "styled-components";
-import BuildMain from "./BuildMain";
-import BuildSide from "./BuildSide";
+import BuildMainScreen from "./BuildMain";
+import BuildSideScreen from "./BuildSide";
 
-const Home = () => {
+const HomeScreen = () => {
   return (
-    <Contaner>
+    <Container>
       <Wrapper>
-        <SideSreen>
-          <BuildSide />
-        </SideSreen>
-
         <MainScreen>
-          <BuildMain />
+          <BuildMainScreen />
         </MainScreen>
+        <SideScreen>
+          <BuildSideScreen />
+        </SideScreen>
       </Wrapper>
-    </Contaner>
+    </Container>
   );
 };
-export default Home;
 
-// const Contaner = styled.div``;
-// const Contaner = styled.div``;
-// const Contaner = styled.div``;
+export default HomeScreen;
+
+const SideScreen = styled.div`
+  width: 400px;
+  display: flex;
+  justify-content: flex-start;
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
+`;
+
 const MainScreen = styled.div`
-  display: flex;
   width: 600px;
-  justify-content: flex-start;
-  @media (max-width: 1100px) {
-    display: none;
-  }
-`;
-const SideSreen = styled.div`
   display: flex;
-  width: 500px;
-  justify-content: flex-start;
-  @media (max-width: 1100px) {
-    display: none;
+  justify-content: center;
+  @media screen and (max-width: 1000px) {
+    display: flex;
+    justify-content: center;
+    width: 600px;
   }
 `;
+
 const Wrapper = styled.div`
-  width: 1100px;
+  width: 1000px;
   display: flex;
-  @media (max-width: 1100px) {
+  justify-content: space-between;
+  padding-top: 50px;
+  @media screen and (max-width: 1000px) {
     display: flex;
     justify-content: center;
   }
 `;
 
-const Contaner = styled.div`
+const Container = styled.div`
   width: 100%;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 70px);
   height: 100%;
-  background-color: white;
-  padding-top: 70px;
+  background-color: #eee;
   display: flex;
   justify-content: center;
+  padding-top: 70px;
 `;
